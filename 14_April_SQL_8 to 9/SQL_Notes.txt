@@ -1,0 +1,60 @@
+14th April 
+- 
+Databse 
+Query data fetch
+SQL --- Structure Query language 
+
+Database ---- collection of data.Organized way to collection of data
+-DBMS - Database Management System
+RDBMS -- Relation Database management system
+
+Tools - MS-Access , MySQL, SQL Severs , POSTgree , Oracle 
+
+MYSQL 
+
+SQL 4 types of Quries 
+DDL
+DML
+DCL
+DQL
+Constraints 
+cluses --- where ,between and , or ,and ,not , is null ....order by
+joinins group by , having
+
+sub quries 
+functions
+procedures 
+trigger
+views 
+cursor
+
+TABLE -------- data 
+row and column
+row means records 
+column field
+student information store 
+    name    address   c_no   age   email
+row1 kavya  Paldi  23456  20  kavya@gmail.com
+row2 dharmishtha Paldi 12122 30 dharmishtha@gmail.com
+row3 bhavesh  cgRoad 2323 20 bhavesh@gmail.com
+Syntax : 
+create table <<table_name>> (column_name datatype constraint,
+                              column_name datatype constraint,
+                              column_name datatype constraint,
+                              column_name datatype constraint.....)
+
+Data types ---- which kind of data you want to store in table/row
+eg. numeric --- decimal , int
+    string --- varchar , char
+    date  ---- date
+
+
+
+create table student(name varchar(20),address varchar(20),m_no int(10) ,age int
+(3),email varchar(20))
+
+employee Table ---- eid , ename , email , salary
+
+TASK ;;;; ----- installation , employee table , customer table 
+search ---- data types in MYSQL
+            data types in SQL Server
