@@ -1,0 +1,6 @@
+create database 14April 
+
+use 14april
+
+create table student(stud_name varchar(20),address varchar(20),m_no int(10) ,age int
+(3),email varchar(20))
