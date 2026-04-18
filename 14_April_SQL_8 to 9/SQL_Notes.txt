@@ -58,3 +58,156 @@ employee Table ---- eid , ename , email , salary
 TASK ;;;; ----- installation , employee table , customer table 
 search ---- data types in MYSQL
             data types in SQL Server
+
+-----------------------------------------------------------
+
+Data Definition Language (related to table) --- create , alter , drop
+Data Manipulation Langauage (related to data) --- insert, update, delete
+
+
+insert into <<table_name>>(col_name,col_name,col_name) values(val1,val2,val3)
+
+update <<table_name>> set column_name=values where column_name=value
+
+delete from <<table_name>> where column_name=value
+
+
+constraint ----- limitations  , rules
+
+1. primary key   --- To uniquely indetify record. + Not NULL (roll no , 
+			eid , cid...)
+2. unique key  ---- to uniuely indetify record , it allows one value as NULL
+			email 
+3. Not null
+4. Forighn key  ---- reference to another table
+5. default ---  
+
+
+create table customer(cid int , 
+cname varchar(20),
+c_no int(10)
+);
+
+describe customer;
+
+alter table customer add email varchar(20);
+
+describe customer;
+
+-- drop table customer;
+/*
+
+*/
+
+insert into customer(cid,cname,c_no) values(1,"dharmishtha",234567) ;
+
+
+insert into customer values(22,'Rohit',22323,'rohit@gmail.com'),
+(222,'Bhavesh',65656,'bhavesh@gmail.com'),
+(203,'Masum',5443534,'masuam@gmail.com'),
+(206,'Riya',56456,'riya@gmail.com');
+
+
+
+select * from customer;
+
+update customer set email='dharmish@gmail.com' where cid=1;
+select * from customer;
+
+delete from customer where cid=22;
+
+select * from customer;
+		 
+18th April 
+----DDL  create , alter , drop 
+---DML    insert, update, delete
+
+constraints ---- limitation 
+1. Primary key 
+
+create table customer(cid int primary key , 
+cname varchar(20) not null,
+c_no int(10) unique key,
+email varchar(20) unique key
+);
+
+
+create table customer(cid int primary key , 
+cname varchar(20) not null,
+c_no int(10) unique key,
+email varchar(20) unique key
+);
+
+insert into customer values(101,'cust1',12345,'cust1@gmail.com'),
+
+(102,'cust1',1245,'cust2@gmail.com'),
+(103,'cust2',45454,'cust3@gmail.com'),
+(104,'tamanna',234567,'tammana@gmail.com'),
+(105,'masum',7890,'masum@gmail.com')
+;
+
+select * from customer;
+
+-- delete from customer where cid=102;
+
+-- to fetch all records/rows from table 
+
+select * from customer;
+
+-- Fetch customer name and contact number 
+
+select cname,c_no from customer;
+
+-- fetch customer details whose id is 102
+select * from customer where cid=102;
+
+
+-- fetch customer details of tammna and masum
+select * from customer where cname = 'tamanna' or cname='masum';
+
+
+
+-- fetch customer details whose name is cust1 and c_no 1245
+select * from customer where cname='cust1' and c_no=1245;
+
+
+
+clause 
+	where
+	or
+	
+
+
+
+
+);
+
+alter table employee add city varchar(20);
+
+insert into employee(ename,salary) values('Ramesh',20000),
+('Bhavesh',30000),
+('Kunal',23000),
+('Riya',28000),
+('tamnna',39000);
+
+
+
+update employee set city='Ahmedabad' where eid=4 ;
+update employee set city = 'Gandhinagar' where eid=3;
+update employee set city='Baroda' where eid=5;
+update employee set city='Ahmedabad' where eid=2 ;
+update employee set city='Baroda' where eid=1 ;
+
+select * from employee;
+
+-- fetch employee details whose salary between 20000 to 30000
+select * from employee where salary between 20000 and 25000;
+
+-- fetch employee names who are belongs to ahmedabbad and Gandhinagar,
+
+select ename,city from employee where city in('Ahmedabad','Gandhinagar');
+
+-- fetch employee details in ascending order of ename
+select * from employee order by ename desc;
+
+-----------------------------------------------------------------------------------------
