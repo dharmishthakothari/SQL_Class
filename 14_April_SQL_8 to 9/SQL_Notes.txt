@@ -211,3 +211,195 @@ select ename,city from employee where city in('Ahmedabad','Gandhinagar');
 select * from employee order by ename desc;
 
 -----------------------------------------------------------------------------------------
+
+23rd Apri
+
+
+DDL     create alter drop
+DML     insert , update , delete
+DQL 	Select
+DCL	grant , revoke
+
+select 
+	where
+	order by
+	between 
+	and
+	or
+	in
+	like      ---- % (multiple letters comparison , and _ is use to compare for single letter)
+	group by
+
+create table customer(cid int primary key , 
+cname varchar(20) not null,
+c_no int(10) unique key,
+email varchar(20) unique key
+);
+
+insert into customer values(101,'cust1',12345,'cust1@gmail.com'),
+
+(102,'cust1',1245,'cust2@gmail.com'),
+(103,'cust2',45454,'cust3@gmail.com'),
+(104,'tamanna',234567,'tammana@gmail.com'),
+(105,'masum',7890,'masum@gmail.com')
+;
+
+-- fetch record of customer whose name is starts with masum
+
+select * from customer where cname like 'c%';
+
+-- fetch record of customer whose name is ends with letter a
+select * from customer where cname like '%a';
+
+-- fetch record of customer whose name having letter u
+select * from customer where cname like '%u%';
+
+
+-- fetch record of customer whose name having 5 letters
+select * from customer where cname like '_____';
+
+-- fetch record of customer whose name strats with c and end with a
+select * from customer where cname like 'c%a';
+
+-- fetch record of customer whose name whose second letter must be u.
+select * from customer where cname like '_u%';
+
+
+Normalization
+---
+Student ---- name  , c_no , email , degree , address , cpllege_name ....
+	20
+
+Batch --- name , timing , syllabus , nooftopics
+
+Factult
+SQL Batch -  studentname , batch name , email , degree , address , college_name , timing , syllbus , nooftopics
+	20 
+
+Master Tables
+Detail tables 
+
+Student_Master  --- sid(pk) , name  , c_no , email , degree , address , cpllege_name
+Batch_Master --- bid(pk) , name , timing , syllabus , nooftopics
+Faculty_master --- fid(pk) , name  , c_no , email 
+
+Batch_Details 
+		bathc_id(pk) , sid(fk) ,fid(FK) ,bid(fk) subjct
+
+
+
+create table employee (eid int primary key auto_increment ,ename varchar(20),
+email varchar(20),
+salary int , 
+c_no int(10),
+dept_id int,
+foreign key(dept_id) references department(did)
+);
+
+
+insert into department values(101,'Sales'),
+(102,'Software'),
+(103,'Admin'),
+(104,'Production');
+
+insert into employee(ename,email,salary,c_no,dept_id) values
+('Kashish','kash@gmail.com',12345,90909090,101),
+('Tamanna','tam@gmail.com',12322,987654211,102),
+('Bhavesh','bhavesh@gmail.com',11111,945643211,101),
+('Dixita','dix@gmail.com',52354,387543211,103),
+('Tamanna','tam@gmail.com',12322,987654211,102);
+
+
+Lab Task :
+customer (cid(pk) , cname , address )
+Product (pid(pk) , pname , description , price)
+order_detials (order_id(PK) , cid(FK) , pid(FK) , qty , order_date)
+
+insert 10 records in customer , 5 records in product
+20 records in order_details
+
+
+25th April 
+
+---Join --- 2/ more tables 
+join always done with common fields
+
+customer - order_details  --- cid
+product - order_details    --- pid 
+
+
+-- fetch order details with product name and customer name
+select order_id , cname,pname,qty,order_date 
+from order_detalis,customer,product 
+where customer.cid=order_detalis.cid  
+and product.pid=order_detalis.pid order by pname;
+
+
+select order_id,pname,qty
+from product
+left join order_detalis
+on 
+product.pid=order_detalis.pid;
+----
+select order_id,cname,qty
+from customer
+left join order_detalis
+on
+customer.cid=order_detalis.cid;
+
+Lab Task :
+RIGHT JOINS
+Show all departments, even if they have no employees.
+
+SELECT 
+    departments.dept_name,
+    employees.emp_name
+FROM 
+    employees
+RIGHT JOIN 
+    departments 
+ON 
+    employees.dept_id = departments.dept_id;
+
+---
+select cname,address from customer
+union
+select cid,qty from order_detalis;
+
+
+
+----- fetch no of orders for mobile
+------find maximum qty orderd 
+---find order qty by each customer 
+group by 
+having
+aggregate function ---- sum , count , max,min , avg
+
+---- count no of orders given by each customer
+select count(*),cname from customer,order_detalis
+where customer.cid=order_detalis.cid group by cname;
+
+----- sum of qty by each cname
+select sum(qty),cname from customer,order_detalis
+where customer.cid=order_detalis.cid group by cname;
+
+LabTask : 
+find no of orders by each product
+find avg of orders by each product
+
+course		 ---- cid cname fees
+student       ----- sid ,  sname ,address , c_no 
+enroll_details ---- eid , cid,sid ,e_date 
+
+
+course 
+101		Data Science 	20000
+102		Data Analytrics	12000
+103		Backend Developer 15000
+
+Student 
+
+enroll_details
+101		101		1	20 April 2026
+
+department 
