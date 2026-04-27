@@ -402,4 +402,10 @@ Student
 enroll_details
 101		101		1	20 April 2026
 
-department 
+department (Did(PK) ,dname)
+Employee (eid(PK) , ename , email ,salary ,join_date, did(FK))
+
+Insert 5 records in Department table
+Insert 15 records in Employee table.
+
+
