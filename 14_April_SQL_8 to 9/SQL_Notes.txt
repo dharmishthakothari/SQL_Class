@@ -385,6 +385,10 @@ where customer.cid=order_detalis.cid group by cname;
 
 LabTask : 
 find no of orders by each product
+select count(*) as 'No of product ordered' , pname as 'product name' from product,order_detalis
+where product.pid=order_detalis.pid
+group by pname;
+
 find avg of orders by each product
 
 course		 ---- cid cname fees
@@ -408,4 +412,38 @@ Employee (eid(PK) , ename , email ,salary ,join_date, did(FK))
 Insert 5 records in Department table
 Insert 15 records in Employee table.
 
+28th April
+----we had seen join group by
+
+group by ---- each dept
+				each customer
+	
+
+----
+-- fetch employee details 
+
+select *  from emp;
+
+-- fetch emp details with dept E_Name
+select E_ID,D_Name,e_name,email,Salary from emp,dept
+where emp.d_id=dept.Dept_ID;
+
+-- count no of employees in each department 
+select count(e_id) as 'No of Emp' , d_name 
+from emp,Dept
+where emp.d_id=dept.Dept_ID
+group by d_name;
+
+-- fetch dept name whose has more than 4 employees
+select count(*) as 'no of employees' , d_name
+from emp,dept
+where emp.d_id=dept.Dept_ID
+group by d_name having count(*)>=4;
+
+
+-- avg salary of employees in each dept
+select avg(salary) as 'Average of Salary ' ,d_name 
+from emp,dept
+where emp.d_id=dept.Dept_ID
+group by d_name;
 
