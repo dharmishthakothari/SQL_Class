@@ -447,3 +447,45 @@ from emp,dept
 where emp.d_id=dept.Dept_ID
 group by d_name;
 
+30th April
+--- functions 
+---To perfrom specific task 
+2 types of funcitons 
+	--- user defined 
+	---in built   (sum,count,avg)
+
+categories --- text , numeric , date 
+full name 
+users --- fname , lname ,
+
+select * from employee;
+
+select concat(name,' ',dept) as 'Name-Dept' from employee;
+
+select name,length(name) as ' Total no of letters',upper(name) from employee;
+
+select * from employee;
+
+select substring(dept,1,4) from employee;
+
+select * from employee where trim(name)='Ava';
+
+select replace(dept,'Sales','Software') from employee;
+
+select now();
+
+select CURDATE();
+
+select curtime();
+
+
+LabTask : Assignmene Must me complete 
+2. CEIL() / CEILING()	Rounds up			SELECT CEIL(4.2);
+FLOOR()		Rounds down			SELECT FLOOR(4.9);
+POWER()		Exponentiation		SELECT POWER(2, 3);
+
+
+
+
+
+
