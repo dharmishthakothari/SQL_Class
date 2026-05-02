@@ -4,3 +4,36 @@ use 14april
 
 create table student(stud_name varchar(20),address varchar(20),m_no int(10) ,age int
 (3),email varchar(20))
+
+
+
+2nd May
+
+delimiter $$
+create function calculate_total(qty int,price int)
+returns int
+deterministic
+begin 
+declare total int;
+set total:=qty*price;
+return total;
+end$$
+delimiter ;
+
+
+
+DELIMITER // 
+create function square (num int)
+returns int 
+DETERMINISTIC
+begin
+declare ans int;
+set ans:=num*num;
+return ans;
+
+
+create view view_event as select title from campus_events;
+
+select * from view_event
+end//
+DELIMITER ;
