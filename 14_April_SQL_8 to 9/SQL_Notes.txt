@@ -485,6 +485,9 @@ FLOOR()		Rounds down			SELECT FLOOR(4.9);
 POWER()		Exponentiation		SELECT POWER(2, 3);
 
 
+2nd May 
+
+
 
 
 
