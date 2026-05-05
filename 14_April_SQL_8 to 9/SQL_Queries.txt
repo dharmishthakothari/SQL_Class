@@ -37,3 +37,21 @@ create view view_event as select title from campus_events;
 select * from view_event
 end//
 DELIMITER ;
+
+5th May
+
+create view view_dept_emp as 
+select emp_id,emp_name,salary,dept_name from employee,department 
+where employee.dept_id=department.dept_id
+
+select dept_name,emp_name from view_dept_emp where dept_name='HR'
+
+DDL     --- create , alter , drop 
+DML   ---- insert , update , delete 
+DCL   --- grant and revoke
+DQL   --- select 
+TCL --- rollback , savepoint ,commit
+
+
+
+
