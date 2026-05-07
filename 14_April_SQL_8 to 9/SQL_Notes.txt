@@ -488,7 +488,21 @@ POWER()		Exponentiation		SELECT POWER(2, 3);
 2nd May 
 
 
+7th May
+---FGind minimum salaray for each dept  (summary for each department )
+select * from employee order by salary ascending
 
+select min(salary) from employee,department where department.did=employee.did
+group by did 
+
+-----Find minimum salaray for each dept corresponding to each employee 
+dept_name salary    min(salary)
+HR		   25000     10000
+HR			15000    10000
+Finanace   22000      22000
+
+
+Window functions are used to perform calculations across a set of rows(min) related to the current row(eid)—without grouping them like GROUP BY does. 
 
 
 
