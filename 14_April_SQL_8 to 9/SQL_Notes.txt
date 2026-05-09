@@ -504,5 +504,32 @@ Finanace   22000      22000
 
 Window functions are used to perform calculations across a set of rows(min) related to the current row(eid)—without grouping them like GROUP BY does. 
 
+9th May 
+
+Window ---- 
+
+category  --- 70000 high salary 
+              Average salary 
 
 
+eid dept  salary
+101  Software  20000   ---- salary>18300   (Above Average)
+102  IT        12000   
+103  IT        10000
+104  Software  15000         15000<18300   Below Average
+105  Software  20000          20000>18300  Above Average
+
+Software 55000----18300  --- 
+
+
+SUBQueries 
+select * from table where col_name=
+
+---- query within query 
+select * from table where col_name=(select col_name from table where .... )
+
+it execute first inner query , after outer query 
+
+--- find the employees who earn more than average salary 
+---average salary department 
+----more salary
