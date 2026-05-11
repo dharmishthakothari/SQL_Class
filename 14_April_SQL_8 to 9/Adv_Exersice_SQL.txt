@@ -1,0 +1,273 @@
+Product Analytics System — SQL Query Assignment
+Problem Statement
+
+A retail company wants to maintain product sales and customer purchase data for business analysis. Students need to design and query the database to generate analytical reports using advanced SQL concepts.
+
+PART 1 — DATABASE CREATION
+Task 1
+
+Create a database named:
+
+product_analytics_system
+PART 2 — TABLE CREATION
+
+Students must create the following tables with proper:
+
+Primary Keys
+Foreign Keys
+Constraints
+Task 2 — Create Categories Table
+Required Fields
+category_id
+category_name
+description
+Task 3 — Create Products Table
+Required Fields
+product_id
+product_name
+category_id
+price
+stock_quantity
+supplier_id
+Task 4 — Create Customers Table
+Required Fields
+customer_id
+customer_name
+city
+email
+phone_number
+
+Task 5 — Create Suppliers Table
+Required Fields
+supplier_id
+supplier_name
+city
+contact_number
+
+
+Task 6 — Create Orders Table
+Required Fields
+order_id
+customer_id
+order_date
+total_amount
+
+
+Task 7 — Create Order_Details Table
+Required Fields
+order_detail_id
+order_id
+product_id
+quantity
+price
+PART 3 — DATA INSERTION
+
+Task 8
+Insert minimum:
+
+5 categories
+15 products
+10 customers
+5 suppliers
+20 orders
+20 order details
+PART 4 — BASIC SQL QUERIES
+Task 9
+
+Display all products.
+
+Task 10
+
+Display products with price greater than 5000.
+
+Task 11
+Display customers from Ahmedabad.
+
+Task 12
+Display products sorted by price in descending order.
+
+Task 13
+Display total number of products.
+PART 5 — AGGREGATE FUNCTION QUERIES
+
+Task 14
+
+Find:
+Maximum product price
+Minimum product price
+Average product price
+
+Task 15
+Find total sales amount.
+
+Task 16
+Find total orders placed by each customer.
+
+Task 17
+Display category-wise total products.
+
+Task 18
+Display category-wise average product price.
+
+PART 6 — JOIN QUERIES
+Task 19
+Display:
+
+Product Name
+Category Name
+
+using JOIN.
+
+Task 20
+Display:
+
+Customer Name
+Order ID
+Order Date
+
+using JOIN.
+
+Task 21
+Display:
+
+Product Name
+Supplier Name
+
+using JOIN.
+
+Task 22
+Display complete order report including:
+
+Customer Name
+Product Name
+Quantity
+Price
+Total Amount
+
+PART 7 — SUBQUERY EXERCISES
+Task 23
+Display products having price greater than average price.
+
+Task 24
+Display customer who placed highest order amount.
+
+Task 25
+Display most expensive product.
+
+Task 26
+Display products never ordered.
+
+Task 27
+Display customers who placed more orders than average orders.
+
+PART 8 — CTE EXERCISES
+
+Task 28
+Create CTE to display high-price products.
+
+Condition:
+
+Price > 10000
+
+Task 29
+Create CTE for customer total purchases.
+
+Task 30
+Create CTE to display top-selling products.
+
+Task 31
+Create multiple CTEs for:
+
+Product sales
+Customer purchases
+
+and combine results.
+
+PART 9 — WINDOW FUNCTION EXERCISES
+
+Task 32
+Rank products based on price using:
+
+Task 33
+Display dense ranking of customers based on total purchase.
+
+
+Task 34
+Generate row numbers for products.
+
+Task 35
+Display running total of sales amount.
+
+
+Task 36
+Display previous order amount using:
+
+LAG()
+Task 37
+
+Display next order amount using:
+
+LEAD()
+Task 38
+
+Rank products category-wise.
+
+Use:
+
+PARTITION BY
+PART 10 — ADVANCED ANALYTICAL REPORTS
+
+Task 39
+Display Top 5 selling products.
+
+Task 40
+Display highest revenue generating category.
+
+Task 41
+Display customer with maximum purchases.
+
+Task 42
+Display least selling products.
+
+Task 43
+Display monthly sales report.
+
+Task 44
+Display supplier-wise product count.
+
+Task 45
+Display category-wise revenue.
+
+Task 46
+Display top 3 customers based on purchase amount.
+
+Task 47
+Display products whose sales are below average sales.
+
+Task 48
+Display percentage contribution of each category in total sales.
+
+PART 11 — BONUS TASKS
+
+Task 49
+Find duplicate product prices.
+
+Task 50
+Find second highest product price.
+
+Task 51
+Display products with no stock available.
+
+Task 52
+Generate customer purchase summary report.
+
+FINAL SUBMISSION
+
+Students must submit:
+
+Database Schema
+Table Creation Queries
+Insert Queries
+All SQL Queries
+Output Screenshots
+Project Documentation
