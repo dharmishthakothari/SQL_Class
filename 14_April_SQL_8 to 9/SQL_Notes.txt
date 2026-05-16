@@ -550,3 +550,12 @@ IT        13500
 
 e1   krunal   software  20000
 e3   Netra    IT        15000
+
+---16th May
+
+---indexing 
+---searching easy / fast 
+---optization we have to use indexing
+
+
+select * from employee 
